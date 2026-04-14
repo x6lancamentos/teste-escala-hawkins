@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { hawkinsScale, getUserLevel } from "@/lib/hawkins-scale";
+import { hawkinsScale } from "@/lib/hawkins-scale";
 
 interface FrequencyChartProps {
   userFrequency: number;
@@ -35,10 +35,9 @@ export default function FrequencyChart({
     // Clear
     ctx.clearRect(0, 0, width, height);
 
-    // Find user level index
-    const userLevel = getUserLevel(Math.round(userFrequency / 5));
+    // Find user level index by matching the level name directly
     const userLevelIndex = hawkinsScale.findIndex(
-      (l) => l.name === userLevel.name
+      (l) => l.name === userLevelName
     );
 
     // Draw bars
