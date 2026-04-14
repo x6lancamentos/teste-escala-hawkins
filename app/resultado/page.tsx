@@ -3,6 +3,7 @@
 import { useRouter } from "next/navigation";
 import { useState, Suspense, useEffect } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useTest } from "@/context/TestContext";
 import FrequencyChart from "@/components/FrequencyChart";
 import { resultCopy, faqData, testimonials } from "@/lib/result-copy";
@@ -282,8 +283,14 @@ function ResultadoContent() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center"
         >
-          <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gold-500/20 border-2 border-gold-500 flex items-center justify-center">
-            <span className="text-5xl text-gold-400">KL</span>
+          <div className="relative w-40 h-40 mx-auto mb-6 rounded-full overflow-hidden border-4 border-gold-500 shadow-[0_0_30px_rgba(212,175,55,0.3)]">
+            <Image
+              src="/foto-keuller.jpeg"
+              alt="Keuller Lima - Mentor de Alta Frequência"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
             Quem é Keuller Lima
@@ -532,9 +539,8 @@ function ResultadoContent() {
                   >
                     <span className="text-white font-medium pr-4">{faq.question}</span>
                     <span
-                      className={`text-gold-400 text-xl flex-shrink-0 transition-transform duration-200 ${
-                        expandedFaq === i ? "rotate-45" : ""
-                      }`}
+                      className={`text-gold-400 text-xl flex-shrink-0 transition-transform duration-200 ${expandedFaq === i ? "rotate-45" : ""
+                        }`}
                     >
                       +
                     </span>
