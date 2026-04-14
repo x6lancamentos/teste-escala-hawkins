@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx *)",
+      "Bash(npm install)",
+      "Bash(move *)",
+      "Bash(ren *)",
+      "Bash(npm run *)",
+      "Bash(git init)",
+      "Bash(curl *)",
+      "Bash(push-to-github.bat)"
+    ]
+  },
+  "$version": 3
+}
