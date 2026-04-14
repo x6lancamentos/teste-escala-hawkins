@@ -25,8 +25,23 @@ function ResultadoContent() {
   const { name, levelName, frequency, category } = userResult;
   const copy = resultCopy[category as keyof typeof resultCopy];
 
-  // CTA URL - replace with actual product URL
-  const ctaUrl = "https://pay.hotmart.com/SEU-LINK-AQUI";
+  // CTA URL com UTMs dinâmicas baseadas no resultado do lead
+  const baseUrl = "https://pay.herospark.com/lancamento-vitalicio-515097";
+  const slugify = (str: string) =>
+    str
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\s+/g, "-");
+
+  const utmParams = new URLSearchParams({
+    utm_source: "teste-hawkins",
+    utm_medium: "devolutiva",
+    utm_campaign: slugify(category),
+    utm_content: slugify(levelName),
+    utm_term: slugify(name),
+  });
+  const ctaUrl = `${baseUrl}?${utmParams.toString()}`;
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 40 },
