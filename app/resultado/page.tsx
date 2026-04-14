@@ -362,6 +362,23 @@ function ResultadoContent() {
               </div>
             </div>
 
+            {/* Preço */}
+            <div className="my-8 text-center">
+              <div className="inline-block bg-dark-800 border border-gold-500/40 rounded-2xl px-10 py-6">
+                <p className="text-gray-400 text-sm uppercase tracking-widest mb-1">Investimento hoje</p>
+                <div className="flex items-center justify-center gap-3 mb-1">
+                  <span className="text-gray-500 line-through text-lg">R$ 197</span>
+                  <span className="bg-alert/20 text-alert text-xs font-bold px-2 py-0.5 rounded-full">51% OFF</span>
+                </div>
+                <p className="text-5xl font-black text-gold-gradient leading-none">
+                  R$ 97
+                </p>
+                <p className="text-gray-400 text-sm mt-2">
+                  🔒 Acesso <strong className="text-white">Vitalício</strong> — pague uma vez, acesse para sempre
+                </p>
+              </div>
+            </div>
+
             {/* CTA Button */}
             <div className="text-center">
               <a
